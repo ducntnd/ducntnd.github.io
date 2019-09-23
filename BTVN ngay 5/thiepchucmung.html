@@ -2,14 +2,17 @@
 <html>
 <head>
 	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 		<style  type="text/css">
 		body{
 			overflow: scroll;
-			background-image: url("images.jpg");
+			background-image: url("01-happy-birthday-facts-cake.jpg");
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
-						}
+			box-sizing: border-box;
+			}
 			
 .container {
   width: 100%;
@@ -1114,18 +1117,18 @@
 				font-size: 3rem;
 				z-index: 150;
 				position: absolute;
-				top:650px;
-				left:1400px;
+				bottom:0px;
+				right:0px;
 			}
 			.text{
 				width: 100%;
 				font-size: 100px;
 				text-align: center;
 				color: #230bde;
-				   	font-family:Impact;
+				   	font-family: 'Mansalva', cursive;;
 				    opacity: 0;
 				    position: absolute;
-				    top:25%;
+				    top:23%;
 				       animation: fade_in_text 2s ease-in-out 5s forwards;
 				 }
 		@keyframes fade_in_text{
@@ -1144,9 +1147,9 @@
 			text-align: center;
 			font-weight: 500;
 			color: green;
-			font-family: monospace;
+			font-family: 'Lobster', cursive;
 			position: absolute;
-			top:50%;
+			top:55%;
 		}
 		.down{
 			opacity: 0;
@@ -1198,10 +1201,7 @@
 
 </head>
 <body >
-	<iframe src="250-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-	<audio autoplay loop>
-  <source src="Kisstherain.mp3" type="audio/mpeg">
-</audio>
+	<iframe src="./riverflowinyou.mp3" allow="autoplay" id="iframeAudio" style="display:none;"></iframe>
 	<div class="container">
 	<h2 class="from"><span style="color:red;">From:</span> <span style="color:orange">________________
 	<br>______________________

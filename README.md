@@ -1,1 +1,0 @@
-# ducntnd.github.io
