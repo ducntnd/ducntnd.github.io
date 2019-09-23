@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<style type="text/css">
+		ul{
+			width:200px;
+			list-style-type:none;
+			border: 1px solid black;
+			padding-left: 0;
+			position: relative;
+			box-sizing: border-box;
+			height: 100%;
+			}
+		.menu1{
+			margin:10px;
+			margin-right:0px;
+				}
+		.menu1 li{
+			margin-bottom: 10px;
+		}
+		.menu1:hover{
+			color: orange;
+			background-color: skyblue;
+		}
+		.hover:hover>ul, .menu1:hover>i,.menu2:hover>i{
+			visibility:visible;
+		}
+
+		.hover>ul{
+			position: absolute;
+			top:0px;
+			left:198px;
+			visibility: hidden;
+			width: 200px;
+			padding-left: 5px;
+			padding-top: 10px;
+			}
+		
+		.menu2:hover{
+			color: orange;
+			background-color: skyblue;
+		}
+		.menu2>ul{
+			position: absolute;
+			top:0px;
+			left:198px;
+			visibility: hidden;
+		}
+		.menu2:hover>ul{
+			visibility: visible;
+			color: black;
+		}
+		.menu2 li{
+			margin:10px;
+			margin-right: 0px;
+		}
+		.menu2 li:hover{
+			color: orange;
+			background-color: skyblue;
+		}
+		i{
+			float: right;
+			visibility: hidden;
+			margin-right:5px;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+	</style>
+</head>
+<body>
+<ul>
+	<li class="menu1 hover">Thiết bị điện tử
+				<ul>
+			<li class="menu2">Thiết bị di động
+				<ul>
+					<li>Samsung</li>
+					<li>Blackberry</li>
+					<li>Iphone</li>
+					<li>Ipad</li>
+				</ul>
+				<i class="fas fa-align-justify"></i>
+			</li>
+			<li class="menu2">Máy tính bảng
+			<i class="fas fa-align-justify"></i>
+			</li>
+			<li class="menu2">Laptop
+			<i class="fas fa-align-justify"></i>
+			</li>
+			<li class="menu2">Máy tính để bàn
+			<i class="fas fa-align-justify"></i>
+			</li>
+			<li class="menu2">Âm thanh
+			<i class="fas fa-align-justify"></i>
+			</li>
+			<li class="menu2">Camera giám sát
+			<i class="fas fa-align-justify"></i>
+			</li>
+			<li class="menu2">Máy ảnh kỹ thuật số
+			<i class="fas fa-align-justify"></i>
+			</li>
+			<li class="menu2">Máy quay phim & Máy quay...
+			<i class="fas fa-align-justify"></i>
+			</li>
+		</ul>
+		<i class="fas fa-align-justify"></i>
+	</li>
+	<li class="menu1">Phụ kiện điện tử 
+	<i class="fas fa-align-justify"></i>
+	</li>
+	<li class="menu1">TV và thiết bị gia dụng
+	<i class="fas fa-align-justify"></i>
+	</li>
+	<li class="menu1">Sức khỏe và làm đẹp
+	<i class="fas fa-align-justify"></i>
+	</li>
+	<li class="menu1">Hàng mẹ, bé và đồ chơi
+	<i class="fas fa-align-justify"></i>
+	</li>
+	<li class="menu1">Siêu thị tạp hóa
+	<i class="fas fa-align-justify"></i>
+	</li>
+	<li class="menu1">Hàng gia dụng và đời sống
+	<i class="fas fa-align-justify"></i>
+	</li>
+	<li class="menu1">Thời trang nữ
+	<i class="fas fa-align-justify"></i>
+	</li>
+	<li class="menu1">Thời trang nam
+	<i class="fas fa-align-justify"></i>
+	</li>
+</ul>
+</body>
+</html>
