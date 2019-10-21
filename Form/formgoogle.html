@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: url('tải xuống (3).jpg');
+			background-size: cover;
+			height: 100vh;
+		}
+		form{
+			margin:20px;
+		}
+		#fieldset{
+			width: 50%;
+			display:grid;
+			grid-template-rows: 30px auto;
+			grid-template-columns: auto auto;
+			border: 1px solid black;
+			border-radius: 20px;
+			box-sizing: border-box;
+			padding: 20px;
+			background-color: green;
+		}
+		.cover{
+			grid-column:1/2;
+			grid-row:2/3;
+					}
+		input{width: 100%;
+			height: 30px;
+			margin:10px 0;	
+			border: 2px solid grey;
+		}
+		.name{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+		.name input{
+			width: 50%;
+			margin-right: 10px;
+		}
+		.mail{
+			width:55%; 
+		}
+		h2{
+			grid-column:1/2;
+			grid-row:1/2;
+			text-align: center;
+			color:white;
+		}
+		
+		.image{
+			grid-row:2/3;
+			grid-area:2/3;
+			box-sizing: border-box;
+			padding-top: 25px;
+			display: flex;
+			flex-direction: column;
+		}
+		.image p{
+			margin-top: 10px;
+			color: white;
+		}
+		img{
+			width: 100px;
+			height: 100px;
+		}
+		#submit{
+			width: 70px;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+<script type="text/javascript">
+	$( document ).ready(function() {
+  // Handler for .ready() called.
+	$(".cover").validate({
+		rules:{
+			firstname:"required",
+			lastname:"required",
+			gmail:{required:true,
+				email:true
+		},
+			password:{
+				required:true,
+				minlength:8
+			},
+			confirm:{
+				required:true,
+				minlength:8,
+				equalTo:"#password"
+			}
+		},
+		messages:{
+			firstname:"Vui lòng nhập tên",
+			lastname:"Vui lòng nhập họ",
+			gmail:{required:"Bắt buộc phải nhập",
+				email:"Không đúng định dạng rồi"
+		},
+			password:{
+				required:"Vui lòng nhập mật khẩu",
+				minlength:"Yêu cầu ít nhất 8 ký tự"
+			},
+			confirm:{
+				required:"Vui lòng nhập lại mật khẩu",
+				minlength:"Yêu cầu ít nhất 8 ký tự",
+				equalTo:"Mật khẩu cần trùng"
+			}
+		}
+	});
+	});
+</script>
+</head>
+<body>
+<div id="fieldset">
+	<h2>Tạo tài khoản</h2>
+	<form class="cover" method="get">
+	<div class="name">
+	<input type="text" name="firstname" placeholder="First Name" required>
+	<input type="text" name="lastname" placeholder="Last Name" required>
+	</div>
+	<div class="mail">
+	<input type="email" name="gmail" placeholder="gmail" required>
+	</div>
+	<div class="name">
+	<input type="text" id="password" name="password" minlength="8" placeholder="Password" required><br>
+	<input type="text" name="confirm" placeholder="confirm password" minlength="8" required><br>
+	</div>
+	<input id="submit" class="submit" type="submit" value="Đăng ký">
+	</form>
+
+	<div class="image">
+		<img src="tải xuống.jpg">
+		<p>Hãy đăng ký đi nào!</p>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		fieldset{
+			display:grid;
+			grid-template-rows:1fr 1fr 1fr 1fr;
+		}
+		fieldset input{
+			grid-column: 2/3;
+			width: 200px;
+		}
+		div span{
+			grid-column: 1/2;
+			width:10%;
+		}
+		fieldset div{
+			display: grid;
+			grid-template-columns: 70px 200px;
+		}
+	</style>
+</head>
+<body>
+<form>
+	<fieldset>
+	<legend>Contact Details</legend>
+	<div><span class="index">Name:</span>     <input type="text" name="name"></div>
+	<div><span>Age:</span>      <input type="number" name="age"></div>
+	<div><span>DOB:</span>      <input type="date" name="DOB"></div>
+	<div><span>Password:</span> <input type="password" name="password" maxlength="30" disabled></div>
+	</fieldset>
+
+	<textarea name="comment"></textarea><br>
+
+	<label>
+	<input type="checkbox" name="genre" value="rock">Rock</label>
+	<input type="checkbox" name="genre" value="pop">Pop
+	<input type="checkbox" name="genre" value="jazz" checked>Jazz
+
+	<select name="devices">
+		<option value="ipod">iPod</option>
+		<option value="radio">Radio</option>
+		<option value="computer">Computer</option>
+	</select>
+	<br>
+	<input type="submit" value="SEND">
+</form>
+</body>
+</html>
