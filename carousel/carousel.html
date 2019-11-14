@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.carousel{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		img{
+			width: 50vh;
+			height:50vh; 
+		}
+		.bar{
+			width: 100px;
+			height: 50px;
+		}
+		.bar1{
+			display: inline-block;
+			width: 25px;
+			height: 10px;
+				background-color: red;
+				margin-right:5px;
+		}
+		.hid{
+			display: none;
+		}
+		.bien-mat-ben-trai{
+			animation: disleft 0.5s forwards;
+		}
+
+		@keyframes disleft{
+			from{
+				transform: translateX(0%);
+			}to{
+				transform: translateX(-200%);
+			}
+		}
+		.di-vao-ben-phai{
+			animation: moveright 0.5s forwards;
+		}
+
+		@keyframes moveright{
+			from{
+				transform: translateX(200%);
+			}to{
+				transform: translateX(0%);
+			}
+		}
+
+		.bien-mat-ben-phai{
+			animation: disright 0.5s forwards;
+		}
+
+		.di-vao-ben-trai{
+			animation: moveleft 0.5s forwards;
+		}
+
+		.displayfirstimgright{
+			animation: showplace 0.5s forwards;
+		}
+
+		.displaythirdimgleft{
+			animation: placeleft 0.5s forwards;
+		}
+
+		.playfirstimg{
+			animation: setplace 0.5s forwards;
+		}
+		.left,.right{
+			width: 100px;
+			height: 150px;
+			background-color: green;
+			margin:0 10px;
+		}
+		@keyframes showplace{
+			from{
+				transform: translateX(300%);
+			}to{
+				transform: translateX(100%);
+			}
+		}
+
+		@keyframes setplace{
+			from{
+				transform: translateX(50%);
+			}to{
+				transform: translateX(200%);
+			}
+		}
+
+		@keyframes placeleft{
+			from{
+				transform: translateX(-200%);
+			}to{
+				transform: translateX(-100%);
+			}
+		}
+
+		@keyframes disright{
+			from{
+				transform: translateX(0%);
+				}to{
+					transform: translateX(100%);
+				}
+		}
+
+		@keyframes moveleft{
+			from{
+				transform: translateX(-100%);
+			}to{
+				transform: translateX(0%);
+			}
+		}
+
+	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://kit.fontawesome.com/c2224d8649.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			let i=0
+		$(".bar1").on("click",function(){
+			let index=$(".bar1").index(this);
+			$(".bar1").eq(index).css("background-color","black");
+			$(this).siblings().css('background-color','red')
+			$("#img img").removeClass('hid')
+			$(`#img img:eq(${index})`).siblings().attr("class","hid")
+			i=index	
+		})
+		$(".right").on("click",function(){
+			$(`#img img:eq(${i})`).addClass('bien-mat-ben-trai').one('animationend',function(event){
+				$(".bien-mat-ben-trai").removeClass('bien-mat-ben-trai').addClass('hid')
+			})
+			if(i==$("#img img").length-1){
+				i=0
+			}else{
+				i++
+			}
+			if(i==0){
+				$(`#img img:eq(0)`).removeClass('hid').addClass('displayfirstimgright').one('animationend',function(event){
+				$('.displayfirstimgright').removeClass('displayfirstimgright')
+			})	
+			}else{		
+			$(`#img img:eq(${i})`).removeClass('hid').addClass('di-vao-ben-phai').one('animationend',function(event){
+				$('.di-vao-ben-phai').removeClass('di-vao-ben-phai')
+			})
+			}	
+			$(".bar1").eq(i).css("background-color","black");
+			$(`.bar1:eq(${i})`).siblings().css('background-color','red')
+				
+		})
+		$(".left").on("click",function(){
+			if(i==0){
+				$(`#img img:eq(0)`).addClass('playfirstimg').one('animationend',function(event){
+				$(".playfirstimg").removeClass('playfirstimg').addClass('hid')
+			})
+			}else{
+			$(`#img img:eq(${i})`).addClass('bien-mat-ben-phai').one('animationend',function(event){
+				$(".bien-mat-ben-phai").removeClass('bien-mat-ben-phai').addClass('hid')
+				})
+			}
+			if(i==0){
+				i=$("#img img").length-1
+			}else{
+				i--
+			}
+			if(i==$("#img img").length-1){
+				$(`#img img:eq(${i})`).removeClass('hid').addClass('displaythirdimgleft').one('animationend',function(event){
+				$('.displaythirdimgleft').removeClass('displaythirdimgleft')
+			})
+			}else{
+			$(`#img img:eq(${i})`).removeClass('hid').addClass('di-vao-ben-trai').one('animationend',function(event){
+				$('.di-vao-ben-trai').removeClass('di-vao-ben-trai')
+			})
+			}
+			$(".bar1").eq(i).css("background-color","black");
+			$(`.bar1:eq(${i})`).siblings().css('background-color','red')
+			})
+});
+</script>
+</head>
+<body>
+	<div class="carousel">
+<img src="angle-left.svg" class="left">
+	<div id="img">
+<img  src="9eddfd60ccf72aa973e6.jpg">
+<img src="68873773_2120760401563379_2100005713710415872_n.jpg" class="hid">
+<img src="aaa.png" class="hid">
+</div>
+<img src="angle-right.svg" class="right">
+</div>
+<div class="bar">
+	<button class="bar1" style="background-color: black;"></button>
+	<button class="bar1"></button>
+	<button class="bar1"></button>
+</div>
+
+</body>
+</html>
