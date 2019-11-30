@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/c2224d8649.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin:0;
+		}
+		
+		.top{
+			display: flex;
+			justify-content: space-between;
+			box-sizing: border-box;
+			height: 60px;
+			padding: 10px;
+		}
+		.block{
+			height: auto;
+			width: auto;
+			background-color: pink;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.block i{
+			display: none;
+		}
+		.blocks{
+			height: calc(100vh - 60px);
+			width: 100%;
+			box-sizing: border-box;
+			padding: 10px;
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			grid-gap: 10px;
+		}
+		.box{
+			background-color: red;
+			width:100%;
+		}
+		.box2{
+			background-color: red;
+			width:100%;
+		}
+
+		.hidden{display: none;}
+
+		ul li{
+			list-style-type: none;
+			display: inline-block;
+			padding: 0 10px;
+			border-right: 2px solid white;
+			color: white;
+		}
+		ul li:last-child{
+			border: none;
+		}
+
+		
+		.display{
+			background-color: red;
+			padding: 5px 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.display li:nth-child(3){
+			border-right: none;
+		}
+		
+		.form{
+			background-color: pink;
+			padding: 5px 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.form li{
+			color: black;
+			border-right:1px solid black;
+		}
+		.none{
+			display: none;
+		}
+
+		@media (max-width: 568px){
+			.hidden{display: block;}
+			.display{
+				display: none;
+			}
+			
+			.top{
+				position: relative;
+				background-color: orange;
+				flex-direction: column;
+			}
+			.topattr{
+				visibility: visible;
+				background-color: orange;
+				z-index: 1;
+				display: block;
+				height: 40vh;
+				position: absolute;
+				width: 100%;
+			}
+			.block h1{
+				display: none;
+			}
+			.block i{
+				display: block;
+			}
+			.block{
+				margin: 5px;
+				width: 5%;
+			}
+
+			.displaymenu{
+				visibility: visible;
+				width: 90%;
+				height: auto;
+				position: absolute;
+				top:100px;
+				left: 5%;
+				background-color: blue;
+				display: grid;
+				grid-auto-columns: 1fr 1fr 1fr 1fr 1fr;
+				border: 1px solid black;
+				box-sizing: content-box;
+				padding: 0;
+				z-index: 2;
+			}
+
+			.displaymenu li{
+				border-bottom: 1px solid black;
+				width: 100%;
+				border-right:none;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 12px 0;
+			}
+			.form{
+				display: none;
+			}
+			.blocks{
+			padding: 10px;
+			grid-template-columns: auto;
+			grid-template-rows: 1fr 2fr;
+			}
+			.box{
+			height: 100%;
+			}
+			.box2{
+			height: 100%;
+			}
+	</style>
+</head>
+<body>
+	<div class="top">
+	<div class="block"><h1>LOGO</h1>
+	<i class="fas fa-align-justify"></i></div>
+	<ul class="display">
+		<li>Menu 1</li>
+		<li>Menu 2</li>
+		<li>Menu 3</li>
+		<li class="hidden">Login</li>
+		<li class="hidden">Register</li>
+	</ul>
+	<ul class="form">
+		<li>Login</li>
+		<li>Register</li>
+	</ul>
+	</div>
+	<div class="none"></div>
+	<div class="blocks">
+		<div class="box"></div>
+		<div class="box2"></div>
+	</div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$('.block i').on('click', function(event) {
+		$('.display').toggleClass('displaymenu');
+		$('.form').toggleClass('displaymenu');
+		$('.none').toggleClass('topattr');
+	});
+	
+</script>
+</html>

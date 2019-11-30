@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin:0;
+		}
+		body{
+			padding: 15px;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows:1fr 1fr;
+			grid-gap: 15px;
+		}
+		.block{
+			height: 49vh;
+			max-width: 100%;
+			background-color: red;
+		}
+
+		@media (max-width: 568px){
+			body{
+				padding: 20px;
+				background: green;
+				grid-template-columns: auto;
+				grid-template-rows: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/c2224d8649.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin:0;
+		}
+		
+		.top{
+			display: flex;
+			justify-content: space-between;
+			box-sizing: border-box;
+			height: 60px;
+			padding: 10px;
+		}
+		.block{
+			height: auto;
+			width: auto;
+			background-color: pink;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.block i{
+			display: none;
+		}
+		.blocks{
+			height: calc(100vh - 60px);
+			width: 100%;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		.box{
+			background-color: red;
+			width: 100%;
+			height: 100%;
+		}
+		ul li{
+			list-style-type: none;
+			display: inline-block;
+			padding: 0 10px;
+			border-right: 2px solid white;
+			color: white;
+		}
+
+		ul li:last-child{
+			border: none;
+		}
+		.hidden{
+			display: none;
+		}
+
+		ul{
+			background-color: red;
+			padding: 5px 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.none{
+			display: none;
+		}
+		
+		@media (max-width: 568px){
+			.hidden{display: block;}
+			.display{
+				display: none;
+			}
+			.top{
+				position: relative;
+				background-color: orange;
+				flex-direction: column;
+			}
+			.topattr{
+				display: block;
+				background-color: orange;
+				height: 40vh;
+				position: absolute;
+				width: 100%;
+				z-index: 1;
+			}
+			.block h1{
+				display: none;
+			}
+			.block i{
+				display: block;
+			}
+			.block{
+				margin: 5px;
+				width: 5%;
+			}
+			.displaymenu{
+				visibility: visible;
+				width: 90%;
+				height: auto;
+				position: absolute;
+				top:100px;
+				left: 5%;
+				background-color: blue;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				box-sizing: border-box;
+				border: 1px solid black;
+				padding: 0;
+				z-index: 2;
+			}
+
+			.displaymenu li{
+				border-bottom: 1px solid black;
+				width: 100%;
+				border-right:none;
+				display: flex;
+				justify-content: center;
+				padding: 10px 0;
+			}
+	</style>
+</head>
+<body>
+	<div class="top">
+	<div class="block"><h1>LOGO</h1>
+	<i class="fas fa-align-justify"></i></div>
+	<ul class="display">
+		<li class="hidden">Trang chủ</li>
+		<li>Menu 1</li>
+		<li>Menu 2</li>
+		<li>Menu 3</li>
+	</ul>
+	</div>
+	<div class="none"></div>
+	<div class="blocks">
+		<div class="box"></div>
+	</div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$('.block i').on('click', function(event) {
+		$('.display').toggleClass('displaymenu');
+		$('.none').toggleClass('topattr');
+	});
+	
+</script>
+</html>

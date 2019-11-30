@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin:0;
+		}
+		
+		#class{
+			height: auto;
+			padding: 0 20%;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows:1fr 1fr 1fr;
+			grid-gap: 15px;
+		}
+		.block{
+			height: 30vh;
+			max-width: 100%;
+			background-color: red;
+		}
+		.bar{
+			width: 100%;
+			height: 30px;
+			background: yellow;
+		}
+		@media (max-width: 568px){
+			#class{
+				padding: 0 20px;
+				grid-template-columns: auto;
+				grid-template-rows:auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bar"></div>
+	<div id="class">
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	</div>
+</body>
+</html>

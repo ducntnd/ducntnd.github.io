@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin:0;
+		}
+		
+		.top{
+			display: flex;
+			justify-content: space-around;
+			box-sizing: border-box;
+			height: 50px;
+			align-items: center;
+					}
+		.block{
+			width:90px;
+			height: 30px;
+			background-color: red;
+		}
+		.blocks{
+			width: auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			box-sizing: border-box;
+			height: calc(100vh - 50px);
+		}
+		.box{
+			height: 50vh;
+			background-color: red;
+			width: 30%;
+		}
+		
+		@media (max-width: 568px){
+			body{
+				padding: 15px;
+			}
+			.top{
+				padding-bottom: 0;
+				justify-content: space-between;
+				height: auto;
+			}
+			.blocked{
+				display: none;
+			}
+			.blocks{
+				height: 100vh;
+				flex-wrap: wrap;
+			}
+			.box{
+				width: 100%;
+				height: 45vh;
+			}
+			.block{
+				width: 60px;
+				margin: 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="block"></div>
+	</div>
+	<div class="blocks">
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+</html>

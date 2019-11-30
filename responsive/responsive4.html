@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin:0;
+		}
+		
+		.top{
+			display: flex;
+			justify-content: space-between;
+			box-sizing: border-box;
+			padding-right: 15px;
+		}
+		.blocked{
+			flex-grow: 1;
+			background-color: green;
+			margin-left: 15px;
+		}
+		.block{
+			margin: 15px;
+			margin-right:0px;
+			width:90px;
+			height: 30px;
+			background-color: red;
+		}
+		.blocks{
+			padding: 15px;
+			padding-bottom: 0;
+			box-sizing: border-box;
+		}
+		.box{
+			height: 90vh;
+			background-color: red;
+			width: 100%;
+		}
+		
+		@media (max-width: 568px){
+			.top{
+				padding: 15px;
+				padding-bottom: 0;
+			}
+			.blocked{
+				display: none;
+			}
+			.block{
+				width: 60px;
+				margin: 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+	<div class="block"></div>
+	<div class="block"></div>
+	<div class="blocked"></div>
+	<div class="block"></div>
+	</div>
+	<div class="blocks">
+		<div class="box"></div>
+	</div>
+</body>
+</html>
