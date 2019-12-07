@@ -26,17 +26,19 @@ body{
 	background-color: none;
 }
 
-
+#banner img{
+	width: 100%;
+}
+.duc{
+	padding-right: 0;
+	padding-left: 0;
+}
 @media (min-width: 992px){
 .navbar-expand-lg .navbar-nav .nav-link {
 	padding-left: 100px;
 }
 .container{
     max-width: 1062px;
-}
-.duc{
-	padding-right: 0;
-	padding-left: 0;
 }
 }
 
@@ -69,6 +71,10 @@ body{
 	color: #b4ad9e;
 	font-family: 'Ubuntu';
 }
+
+.item{
+	margin-bottom: 130px;
+}
 .posts{
 	margin-top: 130px;
 }
@@ -79,7 +85,6 @@ body{
 .row{
 	margin-left: 0;
 	margin-right: 0;
-	margin-bottom: 130px;
 }
 
 li{
@@ -89,6 +94,7 @@ li{
 	display: inline-block;
 	color: #000000;
 	padding:0 0 0px 20px;
+	margin-left:-15px;
 }
 
 ul{
@@ -121,15 +127,15 @@ ul {
 
 .input{
 	position: relative;
-	width: 25%;
 }
 .input input{
 	background-color: #f0f0f0;
 	border: none;
 	border-bottom: 1px solid #000000;
 	width: 100%;
+	margin-right: 50px;
 }
-.input i{
+.input i{;
 	position: absolute;
 	right:10px;
 	top:50%;
@@ -137,7 +143,7 @@ ul {
 	}
 .final-post{
 	margin-top:100px;
-	margin-bottom: 1360px;
+
 }
 
 .load p{
@@ -150,7 +156,46 @@ ul {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 1300px;
 }
 
-
+@media (max-width: 568px){
+	body{
+		font-size: 11pt;
+	}
+	.load p{
+		font-size: 14pt;
+	}
+	footer{
+		height: auto;
+	}
+	.foot{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.foot-left{
+		display: flex;
+		flex-direction: column;
+	}
+	.title{
+		font-size: 16pt;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+	.description .text{
+		margin-top: 25px;
+	}
+	.category{
+		margin-bottom: 10px;
+	}
+	.item{
+		margin-bottom: 70px;
+	}
+	.thumbnail{
+		margin-bottom: 20px;
+	}
+	.row{
+		margin-bottom: 100px;
+	}
+}
 	
