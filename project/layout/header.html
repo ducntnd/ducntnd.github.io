@@ -1,17 +1,11 @@
-	<header>
-	<div class="head">
-	<div class="container d-flex justify-content-between">
-	<div class="dit">
+<header>
+  <div class="head">
+	<div class="container d-flex justify-content-center">
+	<a href="index.html" class="dit">
 		<img src="assets/images/logo.jpg" alt="">
 		<p class="sky ml-2 mr-1">SKY</p>
 		<p class="sports">THỂ THAO</p>
-  </div>
-  <div class="dits">
-		<p>Bộ sưu tập</p>
-		<form>
-			<input type="search" name="search" placeholder="Tìm kiếm"><i class="fas fa-search"></i>
-		</form>
-	</div>
+  </a>
 	</div>
 	</div>
 	<div id="list">
@@ -20,11 +14,10 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item mr-5">
-        <a class="nav-link active w-auto" href="home.html">Trang chủ <span class="sr-only">(current)</span></a>
+        <a class="nav-link active w-auto" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active dropdown mr-5">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,14 +38,81 @@
         </div>
       </li>
       <li class="nav-item mr-5">
-        <a class="nav-link active w-auto" href="#">Video</a>
+        <a class="nav-link active w-auto" href="video.html">Video</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active w-auto" href="#">Chuyên gia</a>
+        <a class="nav-link active w-auto" href="dudoanchuyengia.html">Chuyên gia</a>
       </li>
     </ul>
+    <form>
+      <input type="search" name="search" id="searchs" placeholder="Tìm kiếm">
+      <i class="fas fa-search"></i>
+    </form>
   </div>
 </nav>
 	</div>
 	</div>
 	</header>
+  <script type="text/javascript">
+    var blogPosts = [
+    {
+     title: "Anh em nhà Hazard hủy diệt, Bỉ hủy diệt Nga",
+      img: "https://www.thenational.ae/image/policy:1.938467:1573965050/08002099.jpg?f=16x9&w=1200&$p$f$w=258f6a0",
+      category: "Bóng đá",
+      time:"12/11/2019 12:00a.m",
+      content: "Hai anh em nhà Hazard có một ngày thi đấu thăng hoa, qua đó giúp Bỉ mang về chiến thắng đậm trước Nga tại vòng loại EURO 2020."
+    },
+    {
+      title: "Gamepad Controls for HTML5 Games",
+      img: "HTML5 games still have a lot of promises to fulfil, but the W3C gamepad specification is a great example of something that’s going well.",
+      category: "https://blog.teamtreehouse.com/gamepad-controls-html5-games"
+    },
+    {
+      title: "‘It Is Never Too Late’: How a Teacher and an Artist Switched to Web Careers in Midstream",
+      img: "The “breaking moment” in Jon Liu’s teaching career came at 7 o’clock in the morning.",
+      category: "https://blog.teamtreehouse.com/never-late-teacher-artist-switched-web-careers-midstream"
+    }
+  ];  
+  
+
+      $('#searchs').keyup(function(){
+        var strs=$(this).val()
+      if(strs.length<4){
+      $('main').css('display','block')
+      $('.displaynone').css('display','none')
+    }else{
+        $('main').css('display','none')
+        $('.displaynone').empty()
+        $('.displaynone').css('display','block')
+        $.each(blogPosts,function(index,value){
+          var stringreplace=value.title.toLowerCase().replace(/ /g,'')
+        if(stringreplace.indexOf(strs.toLowerCase())!=-1||strs.toLowerCase().indexOf(value.category.toLowerCase())!=-1){
+        $('.displaynone').append(`
+          <a href="#" class="d-flex flex-column flex-md-row col-12 col-md-11 mt-4">
+          <img src="${value.img}" class="w-50" alt="">
+        <div class="ml-2">
+          <p class="titles">${value.title}</p>
+          <div class="d-flex w-100 justify-content-between mb-3">
+          <p class="blues">${value.category}</p>
+          <p style="color:#c4c4c4;">${value.time}</p>
+          </div>
+          <p class="contentss">${value.content}</p>
+        </div>
+        </a>
+          `)
+      }
+        })
+}
+})
+$('form input').click(function(){
+  $(this).css('background','white')
+})
+$(document).mouseup(function(e){
+    var container = $(".dits form input");
+
+    // If the target of the click isn't the container
+    if(!container.is(e.target) && container.has(e.target).length === 0){
+        container.css('background','unset');
+    }
+});
+  </script>

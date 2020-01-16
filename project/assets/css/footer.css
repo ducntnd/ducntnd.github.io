@@ -1,5 +1,6 @@
 footer{
 	border-top:4px solid #c62026;
+	background-color: #f4f4f4;
 }
 footer .container{
 	width: 100%;
@@ -25,7 +26,7 @@ footer img{
 	width: 50%;
 }
 .email-address{
-	width: 40%;
+	width: 35%;
 }
 .company p,.bold{
 	font-weight: bold;
@@ -37,6 +38,7 @@ footer img{
 }
 .email-address p{
 	float:right;
+	text-align: right;
 }
 @media (max-width: 768px){
 	.information{
@@ -48,8 +50,12 @@ footer img{
 	.email-address{
 		margin-top: 25px;
 		width: 100%;
+		align-items: flex-start;
 	}
 	.company{
 		width: 100%;
 	}
+	.email-address p{
+	text-align: left;
+}
 }
