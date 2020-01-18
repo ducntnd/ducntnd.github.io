@@ -56,27 +56,47 @@
   <script type="text/javascript">
     var blogPosts = [
     {
+      category:"Tin tức",
      title: "Anh em nhà Hazard hủy diệt, Bỉ hủy diệt Nga",
-      img: "https://www.thenational.ae/image/policy:1.938467:1573965050/08002099.jpg?f=16x9&w=1200&$p$f$w=258f6a0",
-      category: "Bóng đá",
+      img: "https://www.thenational.ae/image/policy:1.938467:1573965050/08002099.jpg?f=16x9&ư$p$f$w=258f6a0",
+      sport: "Bóng đá",
       time:"12/11/2019 12:00a.m",
-      content: "Hai anh em nhà Hazard có một ngày thi đấu thăng hoa, qua đó giúp Bỉ mang về chiến thắng đậm trước Nga tại vòng loại EURO 2020."
+      content: "Hai anh em nhà Hazard có một ngày thi đấu thăng hoa, qua đó giúp Bỉ mang về chiến thắng đậm trước Nga tại vòng loại EURO 2020.",
+      href:"doctintuc.html"
     },
     {
-      title: "Gamepad Controls for HTML5 Games",
-      img: "HTML5 games still have a lot of promises to fulfil, but the W3C gamepad specification is a great example of something that’s going well.",
-      category: "https://blog.teamtreehouse.com/gamepad-controls-html5-games"
+      category:"Chuyên gia",
+      title: "Dự đoán kết quả vòng 5 Ngoại hạng Anh cùng chuyên gia Charlie Nicholas",
+      img: "https://cdn.bongda365.com/media/2019/10/liverpool-vs-tottenham--400x230.jpg",
+      sport: "Bóng đá",
+      time:"13/11/2019 2:00 p.m",
+      content:"Sau thời gian nhường chỗ cho các giải đấu thuộc đội tuyển quốc gia, Ngoại hạng Anh sẽ trở lại vào đêm nay. Và chuyên gia bóng đá Charlie Nicholas đã trở lại với những dự đoán về kết quả các trận đấu thuộc vòng 5.",
+      href:"tinchuyengia.html"
     },
     {
-      title: "‘It Is Never Too Late’: How a Teacher and an Artist Switched to Web Careers in Midstream",
-      img: "The “breaking moment” in Jon Liu’s teaching career came at 7 o’clock in the morning.",
-      category: "https://blog.teamtreehouse.com/never-late-teacher-artist-switched-web-careers-midstream"
+      category:"video",
+      title: "Video Highlight: Cagliari & Inter Milan",
+      img: "https://cdn.24h.com.vn/upload/1-2020/images/2020-01-15/Video-highlight-tran-Inter-Milan---Cagliari-Choi-loi-Lukaku-dai-tiec-5-ban-man-nhan-i2-1579041994-564-width660height432.jpg",
+      sport:"Bóng đá",
+      time:"14/11/2019 3:00 p.m",
+      content:"Video highlight trận Inter Milan - Cagliari: Chói lọi Lukaku, đại tiệc 5 bàn mãn nhãn",
+      href:"doctinvideo.html"
+    },
+    {
+      category:"Tin tức",
+      title:"Dhoni mất hợp đồng trung ương Ấn Độ",
+      img:"https://e2.365dm.com/19/07/384x216/skysports-ms-dhoni-india-cricket_4714557.jpg?20200116114034",
+      sport:"Bóng chày",
+      time:"15/11/2019 5:00 p.m",
+      content:"Sự nghiệp Ấn Độ của MS Dhoni có thể kết thúc với việc người chơi cờ lê kỳ cựu mất hợp đồng trung tâm vào năm 2020.",
+      href:"#"
     }
   ];  
   
 
       $('#searchs').keyup(function(){
         var strs=$(this).val()
+        let z=0
       if(strs.length<4){
       $('main').css('display','block')
       $('.displaynone').css('display','none')
@@ -85,15 +105,31 @@
         $('.displaynone').empty()
         $('.displaynone').css('display','block')
         $.each(blogPosts,function(index,value){
-          var stringreplace=value.title.toLowerCase().replace(/ /g,'')
-        if(stringreplace.indexOf(strs.toLowerCase())!=-1||strs.toLowerCase().indexOf(value.category.toLowerCase())!=-1){
-        $('.displaynone').append(`
-          <a href="#" class="d-flex flex-column flex-md-row col-12 col-md-11 mt-4">
+          var stringreplace=value.title.toLowerCase()
+        if(stringreplace.indexOf(strs.toLowerCase())!=-1||(strs.toLowerCase().indexOf(value.sport.toLowerCase())!=-1)||(strs.toLowerCase().indexOf(value.category.toLowerCase())!=-1)){
+        if(value.category=="video"){
+          $('.displaynone').append(`
+          <a href="${value.href}" style="position:relative;" class="d-flex flex-column flex-sm-row col-12 mt-4 w-100">
           <img src="${value.img}" class="w-50" alt="">
-        <div class="ml-2">
+          <i class="far fa-play-circle fa-3x" style="position: absolute; bottom:5%; left: 5%; transform: translateX(-50%) translateY(-50%); color:white;"></i>
+        <div class="ml-2 w-50">
           <p class="titles">${value.title}</p>
           <div class="d-flex w-100 justify-content-between mb-3">
-          <p class="blues">${value.category}</p>
+          <p class="blues">${value.sport}</p>
+          <p style="color:#c4c4c4;">${value.time}</p>
+          </div>
+          <p class="contentss">${value.content}</p>
+        </div>
+        </a>
+          `)
+      }else{
+        $('.displaynone').append(`
+          <a href="${value.href}" class="d-flex flex-column flex-sm-row col-12 mt-4 w-100">
+          <img src="${value.img}" class="w-50" alt="">
+        <div class="ml-2 w-50">
+          <p class="titles">${value.title}</p>
+          <div class="d-flex w-100 justify-content-between mb-3">
+          <p class="blues">${value.sport}</p>
           <p style="color:#c4c4c4;">${value.time}</p>
           </div>
           <p class="contentss">${value.content}</p>
@@ -101,8 +137,14 @@
         </a>
           `)
       }
+    }else{
+      z++
+    }
         })
-}
+        if(z==blogPosts.length){
+        $('.displaynone').append(`<h2 class="mt-4 w-100 text-center">Không có kết quả nào được tìm thấy</h2>`)
+        }
+      }
 })
 $('form input').click(function(){
   $(this).css('background','white')

@@ -77,6 +77,23 @@ img{
 	}
 
 }
+@media(min-width: 992px){
+	.list-new a img{
+		width: 35% !important;
+	}
+	.list-new a div{
+		width: 74% !important;
+	}
+	}
+
+	@media(min-width: 768px){
+	.list-new a img{
+		width: 50%;
+	}
+	.list-new a div{
+		width: 49%;
+	}
+	}
 .side-news{
 	width: 33%;
 	}

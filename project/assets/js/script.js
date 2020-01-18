@@ -5,7 +5,7 @@ $('.side-news').load('layout/sidebar.html');
 var i=0;
 $('.shows').on('click',function(){
 	if(i==0){
-		$('.disnone').css('display','block');
+		$('.disnone').css('display','flex');
 		$('.shows').html('Ẩn đi')
 		i++
 	}else{
@@ -21,15 +21,19 @@ $('.shows').on('click',function(){
 	}else{
 		$('.video a:nth-last-child(2)').addClass("disnone")
 	}
+	$('.list-group').removeClass('list-group-horizontal')
 	}else{
 		if($('.video a').length %3 == 0){
 		$('.video a:nth-last-child(2)').addClass("disnone")
 	}else{
 		$('.video a:nth-last-child(2)').removeClass("disnone")
 	}
+	$('.list-group').addClass('list-group-horizontal')
 	}
 $(window).resize(function() {
-  if(windowsize<=768){
+	var windowsizes = $(window).width();
+  if(windowsizes<=768){
+  	$('.list-group').removeClass('list-group-horizontal')
 	if($('.video a').length %2 == 0){
 		$('.video a:nth-last-child(2)').removeClass("disnone")
 	}else{
@@ -37,7 +41,9 @@ $(window).resize(function() {
 	}
 	}else{
 		$('.video a:nth-last-child(2)').addClass("disnone")
+		$('.list-group').addClass('list-group-horizontal')
 	}
+	
 });
 
 
@@ -112,6 +118,7 @@ $('button .n').on('click',function(){
  		$(`.${daychosen}t${month}n${year}`).css('display','block')
  		$(`.month-year`).html(`Tháng ${month}, năm 20${year}`)
 })
+$('button .n').removeClass('p-2')
 $('.back').on('click',function(){
 
 	if(month==1){

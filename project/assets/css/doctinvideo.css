@@ -32,6 +32,13 @@ a p:hover{
 		max-width: 49%;
 		flex-basis: 49%;
 	}
+	iframe{
+		height: auto !important;
+	}
+}
+iframe{
+	width: 100%;
+	height: 500px;
 }
 .shows,.hide{
 	display: block;

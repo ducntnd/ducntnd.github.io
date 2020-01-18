@@ -1,10 +1,6 @@
 		body{
 			height: 100vh;
 		}
-		*{
-			margin:0;
-			padding: 0;
-		}
 		.dit{
 			width: auto;
 			height: 100%;
@@ -18,6 +14,14 @@
 	}
 	.blues{
 		color: blue;
+	}
+	.video a{
+		height: 500px;
+		background: linear-gradient(180deg, #8F8989 0%, rgba(180, 171, 171, 0.44) 100%);
+	}
+	.video1 a{
+		height: 400px;
+		background: linear-gradient(180deg, #8F8989 0%, rgba(180, 171, 171, 0.44) 100%);
 	}
 		.dit img{
 			width: 50px;
@@ -118,5 +122,10 @@
 	@media(max-width: 992px){
 		.dits{
 			display: none;
+		}
+	}
+	@media(max-width: 568px){
+		.displaynone i{
+			bottom:62% !important;
 		}
 	}

@@ -46,3 +46,15 @@ a:hover{
 .main-news .not-highlight{
 	width: 53%;
 }
+.shows,.hide{
+	display: block;
+	width: 100%;
+	text-align: center;
+	border:1px solid black;
+	font-weight: 600;
+	color: #000000;
+	background-color: unset;
+}
+.disnone{
+	display: none;
+}
