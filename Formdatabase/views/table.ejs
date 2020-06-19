@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Form</title>
+	<link rel="stylesheet" type="text/css" href="form1.css">
+</head>
+<body>
+	<table style="width:100%">
+  <tr>
+    <th class="seperate">Id</th>
+    <th>Họ và tên</th>
+    <th>Số điện thoại</th>
+    <th class="seperate">Email</th>
+	<th>Giảng viên</th>
+	<th>Đánh giá</th>
+	<th>Ưu điểm</th>
+	<th class="seperate">Đánh giá thêm</th>
+	<th>Chỉnh sửa</th>
+	<th>Xóa</th>
+  </tr>
+  <!-- <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr> -->
+  <% for(let i=0;i < result.length ; i++){ %>
+		<tr>
+			<td class="seperate"><%= (i+1) %></td>
+			<td><%= result[i].name %></td>
+			<td><%= result[i].phone %></td>
+			<td class="seperate"><%= result[i].email %></td>
+			<td><%= result[i].tutor%></td>
+			<td><%= result[i].rate%></td>
+			<td> <%=result[i].attr%></td>
+			<td class="seperate"><%= result[i].comment%></td>
+			<td><a href="/update<%= result[i]._id %>"><i class="fas fa-edit"></i></a></td>
+			<td><form action="/delete" method="POST">
+				<input type="hidden" name="ID" value="<%= result[i]._id %>">
+				<button value="submit"><i class="fas fa-minus-circle"></i></button></form></td>
+		</tr>
+	<% } %>
+</table>
+	<script src="https://kit.fontawesome.com/c2224d8649.js"></script>
+</body>
+</html>

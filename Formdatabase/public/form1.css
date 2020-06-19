@@ -1,0 +1,29 @@
+tr{
+	width: 100%;
+	display:grid;
+	grid-template-columns:2.0% 15% 10% 15.5% 15% 5% 15% 16% 4% 2.5%;
+}
+
+th, td{
+	text-align: left;
+	border:2px solid black;
+	padding:3px;
+}
+
+th{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: red;
+	font-weight: bold;
+	background-color: lightblue;
+}
+
+.seperate{
+	border-right: 4px solid yellow;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
