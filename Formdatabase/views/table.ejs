@@ -33,16 +33,19 @@
   <% for(let i=0;i < result.length ; i++){ %>
 		<tr>
 			<td class="seperate"><%= (i+1) %></td>
-			<td><%= result[i].name %></td>
-			<td><%= result[i].phone %></td>
-			<td class="seperate"><%= result[i].email %></td>
-			<td><%= result[i].tutor%></td>
-			<td><%= result[i].rate%></td>
-			<td> <%=result[i].attr%></td>
-			<td class="seperate"><%= result[i].comment%></td>
-			<td><a href="/update<%= result[i]._id %>"><i class="fas fa-edit"></i></a></td>
+			<td><%= result[i].Ho_ten %></td>
+			<td><%= result[i].SĐT %></td>
+			<td class="seperate"><%= result[i].Email %></td>
+			<td><%= result[i].Teacher%></td>
+			<td><%= result[i].Rating%></td>
+
+			<td><%for (let z=0; z < result[i].Advantage.length;z++){ %>
+			 <%=result[i].Advantage[z] %>
+			<%	} %></td>
+			<td class="seperate"><%= result[i].Morerating%></td>
+			<td><a href="/update<%= result[i].ID %>"><i class="fas fa-edit"></i></a></td>
 			<td><form action="/delete" method="POST">
-				<input type="hidden" name="ID" value="<%= result[i]._id %>">
+				<input type="hidden" name="ID" value="<%= result[i].ID %>">
 				<button value="submit"><i class="fas fa-minus-circle"></i></button></form></td>
 		</tr>
 	<% } %>

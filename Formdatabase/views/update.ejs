@@ -8,25 +8,25 @@
 </head>
 <body>
 		<form method="POST" action="/new-update">
-		<input type="hidden" name="ID" value="<%= update._id %>">
+		<input type="hidden" name="ID" value="<%= update[0].ID %>">
 		<fieldset id="fs1">
 			<legend>Thông tin cá nhân</legend>
 			<div class="grid-container">
 				<div class="grid-item title"><label for="name" class="label-title" >Họ tên:</label></div>
 				<div class="grid-item">
-					<input id="name" type="text" name="name" placeholder="Nguyễn Văn A" data-type="name" value="<%= update.name %>" autofocus>
+					<input id="name" type="text" name="Ho_ten" placeholder="Nguyễn Văn A" data-type="text" value="<%=update[0].Ho_ten %>" autofocus>
 					<span class="invalid"><i class="fas fa-exclamation-triangle"></i> Họ tên không hợp lệ</span>
 					<span class="ok"><i class="fas fa-check-circle"></i></span>
 				</div>
 				<div class="grid-item title"><label for="phone" class="label-title" >Số điện thoại:</label></div>
 				<div class="grid-item">
-					<input id="phone" type="text" name="phone" placeholder="090123456" data-type="phone" value="<%= update.phone %>">
+					<input id="phone" type="text" name="SĐT" placeholder="090123456" data-type="phone" value="<%= update[0].SĐT %>">
 					<span class="invalid"><i class="fas fa-exclamation-triangle"></i> Số điện thoại tối thiểu 9 chữ số</span>
 					<span class="ok"><i class="fas fa-check-circle"></i></span>
 				</div>
 				<div class="grid-item title"><label for="email" class="label-title">Email:</label></div>
 				<div class="grid-item">
-					<input id="email" type="email" name="email" placeholder="example@gmail.com" data-type="email" value="<%= update.email %>">
+					<input id="email" type="email" name="Email" placeholder="example@gmail.com" data-type="email" value="<%= update[0].Email %>">
 					<span class="invalid"><i class="fas fa-exclamation-triangle"></i> Email không hợp lệ</span>
 					<span class="ok"><i class="fas fa-check-circle"></i></span>	
 				</div>
@@ -38,7 +38,7 @@
 			<ul>
 				<li>
 					1. Giảng viên dạy bạn là ai?
-					<select name="tutor" value="<%= update.tutor %>">
+					<select name="Teacher" value="<%= update[0].Teacher %>">
 						<option value="Lương Minh Đức">Lương Minh Đức</option>
 						<option value="Đặng Quang Huy">Đặng Quang Huy</option>
 						<option value="Trịnh Minh Cường">Trịnh Minh Cường</option>
@@ -47,38 +47,38 @@
 				<li>
 					2. Bạn đánh giá giảng viên thế nào? <br>
 					<label>
-						<input type="radio" name="rate" value="5" checked="checked">5 sao
+						<input type="radio" name="Rating" value="5" checked="checked">5 sao
 					</label>
 					<label>
-						<input type="radio" name="rate" value="4" >4 sao
+						<input type="radio" name="Rating" value="4" >4 sao
 					</label>
 					<label>
-						<input type="radio" name="rate" value="3">3 sao
+						<input type="radio" name="Rating" value="3">3 sao
 					</label>
 					<label>
-						<input type="radio" name="rate" value="2">2 sao
+						<input type="radio" name="Rating" value="2">2 sao
 					</label>
 					<label>
-						<input type="radio" name="rate" value="1">1 sao
+						<input type="radio" name="Rating" value="1">1 sao
 					</label>				
 				</li>
 				<li>
 					3. Giảng viên có những ưu điểm nào sau đây? (có thể chọn nhiều hơn 1) <br>
 					<label>
-						<input type="checkbox" name="attr" checked="checked" value="Giảng dễ hiểu">Giảng dễ hiểu
+						<input type="checkbox" name="Advantage" checked="checked" value="Giảng dễ hiểu">Giảng dễ hiểu
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" name="attr" value="Tâm lý">Tâm lý
+						<input type="checkbox" name="Advantage" value="Tâm lý">Tâm lý
 					</label>
 					<br>
 					<label>
-						<input type="checkbox" name="attr" value="Chuyên môn tốt">Chuyên môn tốt
+						<input type="checkbox" name="Advantage" value="Chuyên môn tốt">Chuyên môn tốt
 					</label>
 				</li>
 				<li>
 					4. Đánh giá thêm (tối đa 140 ký tự) <br>
-					<textarea maxlength="140" name="comment" value="<%= update.comment %>"></textarea>
+					<textarea maxlength="140" name="Morerating" value="<%= update[0].Morerating %>"></textarea>
 					<br>
 					<i id="left">140</i>
 				</li>
