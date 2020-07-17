@@ -15,8 +15,6 @@ const app=express()
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('public'));
 
-let sql="Create"
-
 app.set("view engine","ejs")
 
 const conn=mysql.createConnection({
@@ -30,6 +28,17 @@ conn.connect((err)=>{
 	if (err) throw err;
 	console.log("Success")
 })
+
+let sql1="SELECT COUNT(*) as COUNT FROM information_schema.tables WHERE table_schema = 'formdatabase' AND table_name = 'newform1'"
+conn.query(sql1,(err,results)=>{
+	if(results[0].COUNT == 0){
+		conn.query("Create table newform1 (ID int auto_increment primary key,Ho_ten varchar(50), SĐT varchar(10), Email varchar(100), Teacher varchar(50),Rating int, Advantage varchar(100),Morerating varchar(1000))",(err,results)=>{
+			if(err) throw(err)
+		})
+	}
+})
+
+	
 
 app.get("/", function(req,res){
 	res.render("index.ejs");
@@ -80,5 +89,4 @@ app.get("/table",function(req,res){
 
 app.listen('3000', () => {
 	console.log("hello nodejs running on port 3000")
-	
 })
