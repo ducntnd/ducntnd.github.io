@@ -49,7 +49,7 @@ $(function() {
 		// console.log(`isFormValid? ${isFormValid}`);
 
 		//nếu form false thì ngăn ko cho submit
-		// if (isFormValid === false) event.preventDefault();
+		if (isFormValid === false) event.preventDefault();
 		//form true thì alert thành công
 		// else alert('Submit thành công');
 	});
